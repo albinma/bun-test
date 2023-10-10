@@ -1,19 +1,6 @@
-import Redis from "ioredis";
+import { createClient } from "redis";
 
-const redis = new Redis({
-  port: 6379,
-  host: "localhost",
-  db: 0,
-  username: "default",
-  password: "redis",
-});
-
-redis.on("connect", () => {
-  console.log("Redis connected");
-});
-
-redis.on("error", (error) => {
-  console.error(error, "Redis error");
-});
-
+// const redis = new Redis();
+const redis = createClient();
+await redis.connect();
 export { redis };
