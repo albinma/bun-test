@@ -1,17 +1,12 @@
-import { describe, it, expect, beforeAll, afterAll } from "bun:test";
-import { createClient, RedisClientType } from "redis";
+import { describe, it, expect, afterAll, beforeAll } from "bun:test";
 import { redis } from "./redis";
+import { RedisClientType, createClient } from "redis";
 
 describe("Redis", () => {
-  // let redis: RedisClientType;
-  // beforeAll(async () => {
-  //   redis = createClient();
-  //   await redis.connect();
-  // });
+  beforeAll(async () => {});
 
-  // afterAll(async () => {
-  //   await redis.quit();
-  // });
+  afterAll(async () => {
+  });
 
   it("should connect", async () => {
     expect(await redis.ping()).toBe("PONG");
